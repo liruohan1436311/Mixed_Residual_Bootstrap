@@ -10,5 +10,5 @@ Description: This pacakge can be used to generate any number of Mixed Residual B
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Imports: Matrix, foreach, glmnet
+Imports: glmnet
 RoxygenNote: 6.1.0
