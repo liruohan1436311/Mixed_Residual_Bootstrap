@@ -66,7 +66,7 @@ DefFunction <- function(X_star,y_star){...}
 ```
 #### Value
 
-**Estimate**&nbsp;&nbsp;&nbsp;  It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.\
+**Estimate**&nbsp;&nbsp;&nbsp;  It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.
 
 **se**&nbsp;&nbsp;&nbsp; It is the standard error estimated by the bootstrap samples.
 
