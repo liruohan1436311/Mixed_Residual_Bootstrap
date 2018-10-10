@@ -7,7 +7,7 @@ Maintainer: Li Ruohan <u3523358@connect.hku.hk>
 Description: This pacakge can be used to generate any number of Mixed Residual Bootstrap samples.
     Our default setting for the model selection procedure is LASSO and we will update this package for various choice of procedures.
     Users can simply specify the number of bootstrap samples by alternating nboot.
-License: What license is it under?
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Imports: 
