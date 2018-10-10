@@ -17,8 +17,9 @@ For more detailed information regarding this method, please refer to the origina
    ```R
    library(Sample)
    ```
-4. Then, you may apply the following useful functions:\
-   (1) 
+
+## Apply the Useful Functions in the R Package
+1. Generate Mixed Residual Bootstrap Samples
    ```R
    Sample::generate(X,y,nboot)
    ```
@@ -46,16 +47,15 @@ X_star <- BootResult$X
 y_star <- BootResult$y
 ```
 
-   
-   (2) 
+2. Estimate Self-Specifiec Statistics Using Mixed Residual Bootstrap Samples
    ```R
    Sample::estimate(X,y,nboot,DefFunction)
    ```
-###Description
+### Description
 
 This function will automatically generate the estimates of user-specified statistics using the mixed residual bootstrap method.
 
-###Arguments
+### Arguments
 
 **X**&nbsp;&nbsp;&nbsp;	The design matrix with dimension n by p, where n represents the number of observations and p represents the number of parameters.\
 **y**&nbsp;&nbsp;&nbsp;	The n observations of the dependent variable y.\
@@ -64,13 +64,13 @@ This function will automatically generate the estimates of user-specified statis
 ```R
 DefFunction <- function(X_star,y_star){...}
 ```
-###Value
+### Value
 
 **Estimate**&nbsp;&nbsp;&nbsp;  It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.\
 
 **se**&nbsp;&nbsp;&nbsp; It is the standard error estimated by the bootstrap samples.
 
-###Examples
+### Examples
 ```R
 p <- 30
 n <- 100
@@ -84,6 +84,6 @@ fun <- function(X,y){
 estimates <- Sample::estimate(X,y,100,fun)
 ```
 
-5. For Further Information:\
+## For Further Information:
 Please feel free to send email to us <u3523358@connect.hku.hk>
 
