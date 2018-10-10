@@ -7,14 +7,20 @@
 #' @param DefFunction It should be a function of X or y. The first input of DefFunction should be the bootstrapping X and the second input should be the bootstrapping y. Specifically, you may write DefFunction <- function(X_star,y_star){...}
 #' @export
 #' @seealso \code{\link[base]{paste}}
-#' @return  Estimate It is a bootstrap estimate of your specified target.
+#' @return  Estimate It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.
 #' @return  se It is the standard error estimated by the bootstrap samples.
 #' @references Lee, S. M. S. & Wu Y.L. (2017). A Bootstrap Recipe for Post-Model-Selection Inference
 #' @examples \dontrun{
-#' hello("Linda")
-#' [1] "Linda Hello, world!"
-#' hello("Adam")
-#' [1] "Adam Hello, world!"
+#' p <- 30
+#' n <- 100
+#' X <- matrix(rnorm(p*n),ncol = p,nrow = n)
+#' beta <- as.vector(rnorm(p,10,4))
+#' y <- X%*%beta+rnorm(n)
+#' fun <- function(X,y){
+#'  f <- (t(X)%*%X)%*%t(X)%*%y
+#'  return(f)
+#' }
+#' estimates <- estimate(X,y,100,fun)
 #'}
 estimate <- function(X,y,nboot,DefFunction) {
   n <- nrow(X)
@@ -35,13 +41,13 @@ estimate <- function(X,y,nboot,DefFunction) {
   res <- y-mean(y)-(X_boot-as.vector(apply(X_boot,2,mean)))%*%beta_boot
   X_star <- list()
   y_star <- list()
-  Estimate <- c()
+  Estimate <- list()
   for (j in 1:nboot){
     x_star <- X_boot[bootx[,j],]
     res_star <- res[bootx[,j],]
     y_star[[j]] <- x_star%*%beta_boot+res_star
     X_star[[j]] <- X[bootx[,j],]
-    Estimate[j] <- DefFunction(X_star[[j]],y_star[[j]])
+    Estimate[[j]] <- DefFunction(X_star[[j]],y_star[[j]])
   }
   returnList <- list("Esimate" = Estimate)
   return(returnList)

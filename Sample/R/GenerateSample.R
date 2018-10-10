@@ -10,10 +10,14 @@
 #' @return  y   A list of nboot bootstrapping dependend variable observations
 #' @references Lee, S. M. S. & Wu Y.L. (2017). A Bootstrap Recipe for Post-Model-Selection Inference
 #' @examples \dontrun{
-#' hello("Linda")
-#' [1] "Linda Hello, world!"
-#' hello("Adam")
-#' [1] "Adam Hello, world!"
+#' p <- 30
+#' n <- 100
+#' X <- Matrix(rnorm(p*n),ncol = p,nrow = n)
+#' beta <- as.vector(rnorm(p,10,4))
+#' y <- X%*%beta+rnorm(n)
+#' BootResult <- generate(X,y,100)
+#' X_star <- BootResult$X
+#' y_star <- BootResult$y
 #'}
 generate <- function(X,y,nboot) {
   n <- nrow(X)

@@ -16,7 +16,7 @@ estimate(X, y, nboot, DefFunction)
 \item{DefFunction}{It should be a function of X or y. The first input of DefFunction should be the bootstrapping X and the second input should be the bootstrapping y. Specifically, you may write DefFunction <- function(X_star,y_star){...}}
 }
 \value{
-Estimate It is a bootstrap estimate of your specified target.
+Estimate It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.
 
 se It is the standard error estimated by the bootstrap samples.
 }
@@ -25,10 +25,16 @@ This function will automatically generate the estimates of user-specified statis
 }
 \examples{
 \dontrun{
-hello("Linda")
-[1] "Linda Hello, world!"
-hello("Adam")
-[1] "Adam Hello, world!"
+p <- 30
+n <- 100
+X <- matrix(rnorm(p*n),ncol = p,nrow = n)
+beta <- as.vector(rnorm(p,10,4))
+y <- X\%*\%beta+rnorm(n)
+fun <- function(X,y){
+ f <- (t(X)\%*\%X)\%*\%t(X)\%*\%y
+ return(f)
+}
+estimates <- estimate(X,y,100,fun)
 }
 }
 \references{
