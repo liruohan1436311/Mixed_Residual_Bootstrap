@@ -40,7 +40,7 @@ generate <- function(X,y,nboot) {
   y_star <- list()
   for (j in 1:nboot){
     x_star <- X_boot[bootx[,j],]
-    res_star <- res[bootx[,j],]
+    res_star <- res[bootr[,j],]
     y_star[[j]] <- x_star%*%beta_boot+res_star
     X_star[[j]] <- X[bootx[,j],]
   }
