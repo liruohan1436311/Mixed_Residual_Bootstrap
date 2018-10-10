@@ -23,16 +23,16 @@ For more detailed information regarding this method, please refer to the origina
    Sample::generate(X,y,nboot)
    ```
 ### Description
-It is a very useful function to generate Mixed Residual Bootstrap Samples. The default setting of model selection procedure in this version is 10-fold Cross-Validation LASSO. We will update the package to include more procedures later.\
+It is a very useful function to generate Mixed Residual Bootstrap Samples. The default setting of model selection procedure in this version is 10-fold Cross-Validation LASSO. We will update the package to include more procedures later.
 ### Arguments
 
 **X**&nbsp;&nbsp;&nbsp;The design matrix with dimension n by p, where n represents the number of observations and p represents the number of parameters.\
 **y**&nbsp;&nbsp;&nbsp;The n observations of the dependent variable y.\
-**nboot**	&nbsp;&nbsp;&nbsp;Specify the number of Mixed Residual Bootstrap samples that you want to generate. Noted that the input should be a positive integar.\
+**nboot**	&nbsp;&nbsp;&nbsp;Specify the number of Mixed Residual Bootstrap samples that you want to generate. Noted that the input should be a positive integar.
 
 ### Value
 **X**&nbsp;&nbsp;&nbsp;  A list of nboot bootstrapping design matrices\
-**y**&nbsp;&nbsp;&nbsp; A list of nboot bootstrapping dependend variable observations\
+**y**&nbsp;&nbsp;&nbsp; A list of nboot bootstrapping dependend variable observations
 
 ### Examples
 ```R
@@ -52,7 +52,8 @@ y_star <- BootResult$y
    Sample::estimate(X,y,nboot,DefFunction)
    ```
 ###Description
-This function will automatically generate the estimates of user-specified statistics using the mixed residual bootstrap method.\
+
+This function will automatically generate the estimates of user-specified statistics using the mixed residual bootstrap method.
 
 ###Arguments
 
@@ -63,9 +64,11 @@ This function will automatically generate the estimates of user-specified statis
 ```R
 DefFunction <- function(X_star,y_star){...}
 ```
-**Value**&nbsp;&nbsp;&nbsp; Estimate It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.\
+###Value
 
-**se**&nbsp;&nbsp;&nbsp; It is the standard error estimated by the bootstrap samples.\
+**Estimate**&nbsp;&nbsp;&nbsp;  It is a bootstrap estimate of your specified target. Estimate is a list and your estimated target can be a single value or a vector.\
+
+**se**&nbsp;&nbsp;&nbsp; It is the standard error estimated by the bootstrap samples.
 
 ###Examples
 ```R
@@ -82,5 +85,5 @@ estimates <- Sample::estimate(X,y,100,fun)
 ```
 
 5. For Further Information:\
-Please feel free to send email to us, [email](u3523358@connect.hku.hk)
+Please feel free to send email to us <u3523358@connect.hku.hk>
 
