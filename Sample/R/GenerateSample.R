@@ -12,7 +12,7 @@
 #' @examples \dontrun{
 #' p <- 30
 #' n <- 100
-#' X <- Matrix(rnorm(p*n),ncol = p,nrow = n)
+#' X <- matrix(rnorm(p*n),ncol = p,nrow = n)
 #' beta <- as.vector(rnorm(p,10,4))
 #' y <- X%*%beta+rnorm(n)
 #' BootResult <- generate(X,y,100)
