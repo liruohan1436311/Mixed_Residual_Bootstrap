@@ -4,10 +4,17 @@
 \alias{generate}
 \title{Generate Mixed Residual Bootstrap Samples}
 \usage{
-generate(name)
+generate(X, y, nboot)
 }
 \arguments{
-\item{name}{a string that will appear before "Hello, world!"}
+\item{X}{The design matrix with dimension n by p, where n represents the number of observations and p represents the number of parameters.}
+
+\item{y}{The n observations of the dependent variable y.}
+
+\item{nboot}{Specify the number of Mixed Residual Bootstrap samples that you want to generate. Noted that the input should be a positive integar.}
+}
+\value{
+returnlist
 }
 \description{
 It is a very useful function to generate Mixed Residual Bootstrap Samples.
