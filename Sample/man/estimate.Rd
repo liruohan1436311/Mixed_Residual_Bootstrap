@@ -34,7 +34,7 @@ fun <- function(X,y){
  f <- solve(t(X)\%*\%X)\%*\%t(X)\%*\%y
  return(f)
 }
-estimates <- estimate(X,y,100,fun)
+estimates <- Sample::estimate(X,y,100,fun)
 }
 }
 \references{

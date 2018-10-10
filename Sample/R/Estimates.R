@@ -20,7 +20,7 @@
 #'  f <- solve(t(X)%*%X)%*%t(X)%*%y
 #'  return(f)
 #' }
-#' estimates <- estimate(X,y,100,fun)
+#' estimates <- Sample::estimate(X,y,100,fun)
 #'}
 estimate <- function(X,y,nboot,DefFunction) {
   n <- nrow(X)

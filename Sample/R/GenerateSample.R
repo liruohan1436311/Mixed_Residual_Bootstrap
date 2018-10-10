@@ -15,7 +15,7 @@
 #' X <- matrix(rnorm(p*n),ncol = p,nrow = n)
 #' beta <- as.vector(rnorm(p,10,4))
 #' y <- X%*%beta+rnorm(n)
-#' BootResult <- generate(X,y,100)
+#' BootResult <- Sample::generate(X,y,100)
 #' X_star <- BootResult$X
 #' y_star <- BootResult$y
 #'}
