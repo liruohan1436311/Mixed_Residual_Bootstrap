@@ -31,7 +31,7 @@ X <- matrix(rnorm(p*n),ncol = p,nrow = n)
 beta <- as.vector(rnorm(p,10,4))
 y <- X\%*\%beta+rnorm(n)
 fun <- function(X,y){
- f <- (t(X)\%*\%X)\%*\%t(X)\%*\%y
+ f <- solve(t(X)\%*\%X)\%*\%t(X)\%*\%y
  return(f)
 }
 estimates <- estimate(X,y,100,fun)
