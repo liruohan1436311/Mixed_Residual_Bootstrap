@@ -1,6 +1,6 @@
-#' @title Hello World Example
+#' @title Generate Mixed Residual Bootstrap Samples
 #'
-#' @description It's just an example to show how to develop a R package.
+#' @description It is a very useful function to generate Mixed Residual Bootstrap Samples.
 #' @param name a string that will appear before "Hello, world!"
 #' @export
 #' @seealso \code{\link[base]{paste}}
@@ -11,6 +11,6 @@
 #' hello("Adam")
 #' [1] "Adam Hello, world!"
 #'}
-hellofunction <- function(name) {
+generate <- function(name) {
   print(paste(name,"Hello, world!"))
 }
