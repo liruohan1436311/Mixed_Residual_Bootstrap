@@ -1,12 +1,14 @@
 #' @title Generate Mixed Residual Bootstrap Samples
 #'
-#' @description It is a very useful function to generate Mixed Residual Bootstrap Samples.
+#' @description It is a very useful function to generate Mixed Residual Bootstrap Samples. The default setting of model selection procedure in this version is 10-fold Cross-Validation LASSO. We will update the package to include more procedures later.
 #' @param X The design matrix with dimension n by p, where n represents the number of observations and p represents the number of parameters.
 #' @param y The n observations of the dependent variable y.
 #' @param nboot Specify the number of Mixed Residual Bootstrap samples that you want to generate. Noted that the input should be a positive integar.
 #' @export
 #' @seealso \code{\link[base]{paste}}
-#' @return returnlist
+#' @return  X   A list of nboot bootstrapping design matrices
+#' @return  y   A list of nboot bootstrapping dependend variable observations
+#' @references Lee, S. M. S. & Wu Y.L. (2017). A Bootstrap Recipe for Post-Model-Selection Inference
 #' @examples \dontrun{
 #' hello("Linda")
 #' [1] "Linda Hello, world!"

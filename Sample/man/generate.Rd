@@ -14,10 +14,12 @@ generate(X, y, nboot)
 \item{nboot}{Specify the number of Mixed Residual Bootstrap samples that you want to generate. Noted that the input should be a positive integar.}
 }
 \value{
-returnlist
+X   A list of nboot bootstrapping design matrices
+
+y   A list of nboot bootstrapping dependend variable observations
 }
 \description{
-It is a very useful function to generate Mixed Residual Bootstrap Samples.
+It is a very useful function to generate Mixed Residual Bootstrap Samples. The default setting of model selection procedure in this version is 10-fold Cross-Validation LASSO. We will update the package to include more procedures later.
 }
 \examples{
 \dontrun{
@@ -26,6 +28,9 @@ hello("Linda")
 hello("Adam")
 [1] "Adam Hello, world!"
 }
+}
+\references{
+Lee, S. M. S. & Wu Y.L. (2017). A Bootstrap Recipe for Post-Model-Selection Inference
 }
 \seealso{
 \code{\link[base]{paste}}
